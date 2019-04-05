@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.biz.iolist.mapper.DeptMapper">
+
+	<select id="selectAllDept" resultType="deptVO">
+		select * from tbl_dept order by d_name
+	</select>
+	
+	<select id="findByDeptId" resultType="deptVO" parameterType="String">
+		select * from tbl_dept where d_code=#{d_code}
+	</select>
+	
+	<insert id="insertDept" parameterType="deptVO">
+		insert into tbl_dept(d_code, d_name, d_ceo)
+		values(#{d_code}, #{d_name}, #{d_ceo})
+	</insert>
+	
+	<delete id="deleteDept" parameterType="String">
+		delete from tbl_dept where d_code=#{d_code}
+	</delete>
+	
+	<update id="updateDept" parameterType="deptVO">
+		update tbl_dept set d_name=#{d_name}, d_ceo=#{d_ceo} where d_code=#{d_code}
+	</update>
+	
+</mapper>
+

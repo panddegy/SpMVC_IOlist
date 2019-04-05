@@ -1,0 +1,52 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+
+<style>
+
+</style>
+<script>
+$(function(){
+	$("#btn-delete").click(function(){
+		location.href="${rootpath}/dept/delete?d_code=${deptVO.d_code}"
+	})
+})
+</script>
+<div class="form-container">
+	<p>Department input</p>
+	<form:form modelAttribute="deptVO" autocomplete="off">
+		<form:label path="d_code">Input department code</form:label>
+		<form:input path="d_code" />
+		<form:label path="d_name">Input department name</form:label>
+		<form:input path="d_name" />
+		<form:label path="d_ceo">Input department CEO</form:label>
+		<form:input path="d_ceo" />
+		<div class="btn-wrapper">
+			<button class="btn-submit">Submit</button>
+			<c:if test="${BODY=='DEPTUPDATE'}">
+				<button type="button" class="btn-submit" id="btn-delete">Delete</button>
+			</c:if>
+		</div>
+	</form:form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

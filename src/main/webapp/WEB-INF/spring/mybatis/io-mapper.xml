@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.biz.iolist.mapper.IoMapper">
+
+	<select id="selectAllIO" resultType="ioVO">
+		select * from tbl_iolist order by io_date desc
+	</select>
+	
+	<select id="findByIOId" resultType="ioVO" parameterType="String">
+		select * from tbl_iolist where io_id=#{io_id}
+	</select>
+	<!-- 
+	IO_ID     NOT NULL VARCHAR2(4)   
+	IO_DATE   NOT NULL VARCHAR2(10)  
+	IO_PNAME  NOT NULL NVARCHAR2(50) 
+	IO_INOUT           NVARCHAR2(10) 
+	IO_QUAN            NUMBER        
+	IO_PRICE           NUMBER        
+	IO_TOTAL           NUMBER        
+	IO_D_CODE          VARCHAR2(6)   
+	-->
+	<insert id="insertIO" parameterType="ioVO">
+		insert into tbl_iolist(io_id, io_date, io_inout, io_quan, io_price, io_total, io_d_code, io_p_code)
+		values(seq_io.nextval, #{io_date}, #{io_inout}, #{io_quan}, #{io_price}, #{io_total}, #{io_d_code}, #{io_p_code})
+	</insert>
+	
+	<delete id="deleteIO" parameterType="String">
+		delete from tbl_iolist where io_id=#{io_id}
+	</delete>
+	
+	<update id="updateIO" parameterType="ioVO">
+		update tbl_iolist set io_date=#{io_date}, io_inout=#{io_inout}, io_quan=#{io_quan},
+		io_price=#{io_price}, io_total=#{io_total}, io_d_code=#{io_d_code}, io_p_code=#{io_p_code}
+		where io_id=#{io_id}
+	</update>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+

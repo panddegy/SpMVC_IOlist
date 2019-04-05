@@ -1,0 +1,91 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+
+<style>
+
+</style>
+<c:set var="rootpath" value="${pageContext.request.contextPath}" />
+<script>
+$(function(){
+	$("#btn-delete").click(function(){
+		location.href="${rootpath}/io/delete?io_id=${ioVO.io_id}"
+	})
+	$("#select-dcode").focus(function(){
+        window.name = "io_write"
+        window.open("selectdcode",
+                "selectdcode", "width=750, height=500, resizable = no, scrollbars = yes")
+        $("#select-dcode").blur()
+	})
+	$("#select-pcode").focus(function(){
+        window.name = "io_write"
+        window.open("selectpcode",
+                "selectpcode", "width=750, height=500, resizable = no, scrollbars = yes")
+        $("#select-pcode").blur()
+	})
+    
+})
+</script>
+<div class="form-container">
+	<p>IO input</p>
+	<form:form modelAttribute="ioVO" autocomplete="off">
+		<form:label path="io_date">Input date</form:label>
+		<form:input type="date" path="io_date" />
+		<form:label path="io_inout">Select In/Out</form:label>
+		<form:select path="io_inout">
+			<form:option value="매입">In</form:option>
+			<form:option value="매출">Out</form:option>
+		</form:select>
+		<form:label path="io_quan">Input quantity</form:label>
+		<form:input path="io_quan" />
+		<form:label path="io_price">Input price</form:label>
+		<form:input path="io_price" />
+		<!--
+		<form:label path="io_d_code">Select department code</form:label>
+		<form:select path="io_d_code" >
+			<form:option value="" selected="true">Select department code</form:option>
+			<c:forEach var="dept" items="${DEPTLIST}">
+				<form:option value="${dept.d_code}">${dept.d_name}</form:option>
+			</c:forEach>
+		</form:select>
+		<form:label path="io_p_code">Select product code</form:label>
+		<form:select path="io_p_code">
+			<form:option value="" selected="true">Select product code</form:option>
+			<c:forEach var="product" items="${PRODUCTLIST}">
+				<form:option value="${product.p_code}">${product.p_name}</form:option>
+			</c:forEach>
+		</form:select>
+		 -->
+		<form:label path="io_d_code">Select department code</form:label>
+		<form:input path="io_d_code" id="select-dcode"/>
+		<form:label path="io_p_code">Select product code</form:label>
+		<form:input path="io_p_code" id="select-pcode"/>
+		<div class="btn-wrapper">
+			<button class="btn-submit">Submit</button>
+			<c:if test="${BODY=='IOUPDATE'}">
+				<button type="button" class="btn-submit" id="btn-delete">Delete</button>
+			</c:if>
+		</div>
+	</form:form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
