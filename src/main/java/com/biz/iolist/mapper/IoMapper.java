@@ -2,6 +2,7 @@ package com.biz.iolist.mapper;
 
 import java.util.List;
 
+import com.biz.iolist.model.IoDTO;
 import com.biz.iolist.model.IoVO;
 
 public interface IoMapper {
@@ -15,5 +16,7 @@ public interface IoMapper {
 	public int updateIO(IoVO ioVO);
 	
 	public int deleteIO(String io_id);
+	
+	public List<IoDTO> selectJoin();
 	
 }

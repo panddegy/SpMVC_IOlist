@@ -11,6 +11,10 @@
 		select * from tbl_product where p_code=#{p_code}
 	</select>
 	
+	<select	id="findByProductName" resultType="productVO">
+    	select * from tbl_product where p_name like #{p_name}
+    </select>
+	
 	<insert id="insertProduct" parameterType="productVO">
 		insert into tbl_product(p_code, p_name)
 		values(#{p_code}, #{p_name})

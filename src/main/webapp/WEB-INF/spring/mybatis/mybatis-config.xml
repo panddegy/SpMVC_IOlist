@@ -9,5 +9,6 @@
 		<typeAlias type="com.biz.iolist.model.IoVO" alias="ioVO"/>
 		<typeAlias type="com.biz.iolist.model.DeptVO" alias="deptVO"/>
 		<typeAlias type="com.biz.iolist.model.ProductVO" alias="productVO"/>
+		<typeAlias type="com.biz.iolist.model.IoDTO" alias="ioDTO"/>
 	</typeAliases>
 </configuration>

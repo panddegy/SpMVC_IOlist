@@ -6,7 +6,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.biz.iolist.mapper.DeptMapper;
 import com.biz.iolist.mapper.ProductMapper;
+import com.biz.iolist.model.DeptVO;
 import com.biz.iolist.model.ProductVO;
 
 @Service
@@ -48,6 +50,15 @@ public class ProductService {
 		ProductMapper productMapper=sqlSession.getMapper(ProductMapper.class);
 		
 		return productMapper.deleteProduct(p_code);
+	}
+	
+	public List<ProductVO> findByProductName(String p_name){
+		
+		ProductMapper productMapper=sqlSession.getMapper(ProductMapper.class);
+		
+		p_name="%"+p_name+"%";
+		
+		return productMapper.findByProductName(p_name);
 	}
 }
 

@@ -50,17 +50,22 @@ td{
 $(function(){
 	$(".data-row").click(function(){
 		let d_code=$(this).attr("data-code")
+		/*
 		opener.document.getElementById("select-dcode").value=d_code
 		window.close()
+		*/
+		$("#select-dcode").val(d_code)
+		$(".modal").css("display", "none")
 	})
         
     
 })
 </script>
 <body>
+<p></p>
 <div class="table-container">
-<p>Department List</p>
-<table>
+<p class="bounce-in-ani">Department List</p>
+<table class="fade-in-ani">
 	<tr>
 		<th>Department Code</th>
 		<th>Department Name</th>

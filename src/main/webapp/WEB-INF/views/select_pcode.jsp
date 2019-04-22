@@ -56,9 +56,10 @@ $(function(){
 })
 </script>
 <body>
+<p></p>
 <div class="table-container">
-<p>Product List</p>
-<table>
+<p class="bounce-in-ani">Product List</p>
+<table class="fade-in-ani">
 	<tr>
 		<th>Product Code</th>
 		<th>Product Name</th>

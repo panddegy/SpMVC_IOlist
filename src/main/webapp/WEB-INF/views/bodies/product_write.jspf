@@ -14,8 +14,8 @@ $(function(){
 })
 </script>
 <div class="form-container">
-	<p>Product input</p>
-	<form:form modelAttribute="productVO" autocomplete="off">
+	<p class="bounce-in-ani">Product input</p>
+	<form:form modelAttribute="productVO" autocomplete="off"  class="fade-in-ani">
 		<form:label path="p_code">Input product code</form:label>
 		<form:input path="p_code" />
 		<form:label path="p_name">Input product name</form:label>

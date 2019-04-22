@@ -16,4 +16,6 @@ public interface ProductMapper {
 	
 	public int deleteProduct(String p_code);
 	
+	public List<ProductVO> findByProductName(String p_name);
+	
 }

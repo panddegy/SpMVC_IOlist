@@ -12,7 +12,7 @@
 	font-size: 25px;
 	font-style: italic;
 	font-weight: bold;
-	color: darkgray;
+	color: darkgray; 
 }
 form{
 	display: flex;
@@ -39,7 +39,7 @@ label{
 .btn-submit{
 	width: 150px;
 	height: 30px;
-	background-color: ghostwhite;
+	background-color: rgb(30,30,30);
 	border: none;
 	outline: none;
 	margin: 30px auto;
@@ -67,7 +67,7 @@ label{
 body{
 	margin:0;
 	padding:0;
-	background-color: ghostwhite;
+	background-color: rgb(30,30,30);
 }
 section{
 	margin: 30px auto;
@@ -77,5 +77,74 @@ footer{
 	display: flex;
 	flex-direction: fow;
 }
+
+@keyframes fadeIn{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+
+.fade-in-ani{
+	animation-name: fadeIn;
+	animation-duration: 1.5s;
+}
+
+@keyframes bounceIn{
+	0%{
+		opacity:0;
+		transform: translateX(2000px);
+	}
+	60%{
+		transform: translateX(-10px);
+	}
+	80%{
+		transform: translateX(5px);
+	}
+	100%{
+		opacity:1;
+		transform: translateX(0);
+	}
+}
+
+.bounce-in-ani{
+	animation-name: bounceIn;
+	animation-duration: 0.7s;
+}
+
+input, select{
+	background-color: lightgrey;
+	outline: none;
+	border: none;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

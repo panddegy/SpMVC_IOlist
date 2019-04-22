@@ -51,8 +51,8 @@ $(function(){
 })
 </script>
 <div class="table-container">
-<p>Product List</p>
-<table>
+<p class="bounce-in-ani">Product List</p>
+<table class="fade-in-ani">
 	<tr>
 		<th>NO</th>
 		<th>Product Code</th>

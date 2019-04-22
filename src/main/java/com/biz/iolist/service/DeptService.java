@@ -51,6 +51,13 @@ public class DeptService {
 		
 		return deptMapper.deleteDept(d_code);
 	}
+	
+	public List<DeptVO> findByDeptName(String d_name){
+		
+		DeptMapper deptMapper=sqlSession.getMapper(DeptMapper.class);
+		
+		return deptMapper.findByDeptName(d_name);
+	}
 }
 
 

@@ -11,6 +11,10 @@
 		select * from tbl_dept where d_code=#{d_code}
 	</select>
 	
+    <select	id="findByDeptName" resultType="deptVO">
+    	select * from tbl_dept where d_name like '%'||#{d_name}||'%'
+    </select>
+	
 	<insert id="insertDept" parameterType="deptVO">
 		insert into tbl_dept(d_code, d_name, d_ceo)
 		values(#{d_code}, #{d_name}, #{d_ceo})

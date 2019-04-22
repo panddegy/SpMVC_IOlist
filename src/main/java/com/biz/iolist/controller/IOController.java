@@ -31,7 +31,7 @@ public class IOController {
 	public String ioList(Model model) {
 		
 		model.addAttribute("BODY", "LIST");
-		model.addAttribute("LIST", ioService.selectAllIO());
+		model.addAttribute("LIST", ioService.selectJoin());
 		
 		return "home";
 	}
@@ -83,17 +83,19 @@ public class IOController {
 	}
 	
 	@RequestMapping(value="/selectdcode", method=RequestMethod.GET)
-	public String selectDcode(Model model) {
+	public String selectDcode(Model model, @RequestParam String d_name) {
 		
-		model.addAttribute("LIST", deptService.selectAllDept());
+		//model.addAttribute("LIST", deptService.selectAllDept());
+		model.addAttribute("LIST", deptService.findByDeptName(d_name));
 		
 		return "select_dcode";
 	}
 	
 	@RequestMapping(value="/selectpcode", method=RequestMethod.GET)
-	public String selectPcode(Model model) {
+	public String selectPcode(Model model, @RequestParam String p_name) {
 		
-		model.addAttribute("LIST", productService.selectAllProduct());
+		//model.addAttribute("LIST", productService.selectAllProduct());
+		model.addAttribute("LIST", productService.findByProductName(p_name));
 		
 		return "select_pcode";
 	}

@@ -14,8 +14,8 @@ $(function(){
 })
 </script>
 <div class="form-container">
-	<p>Department input</p>
-	<form:form modelAttribute="deptVO" autocomplete="off">
+	<p class="bounce-in-ani">Department input</p>
+	<form:form modelAttribute="deptVO" autocomplete="off"  class="fade-in-ani">
 		<form:label path="d_code">Input department code</form:label>
 		<form:input path="d_code" />
 		<form:label path="d_name">Input department name</form:label>

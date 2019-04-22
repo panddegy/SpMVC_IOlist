@@ -10,6 +10,13 @@
 	<select id="findByIOId" resultType="ioVO" parameterType="String">
 		select * from tbl_iolist where io_id=#{io_id}
 	</select>
+	
+	<select id="selectJoin" resultType="ioDTO">
+		select * from tbl_iolist i
+	    	left join tbl_dept d on i.io_d_code=d.d_code
+	    	left join tbl_product p on i.io_p_code=p.p_code
+    </select>
+    
 	<!-- 
 	IO_ID     NOT NULL VARCHAR2(4)   
 	IO_DATE   NOT NULL VARCHAR2(10)  

@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.biz.iolist.mapper.IoMapper;
+import com.biz.iolist.model.IoDTO;
+import com.biz.iolist.model.IoDTO;
 import com.biz.iolist.model.IoVO;
 
 @Service
@@ -22,6 +24,13 @@ public class IoService {
 		return ioMapper.selectAllIO();
 	}
 	
+	public List<IoDTO> selectJoin(){
+		
+		IoMapper ioMapper=sqlSession.getMapper(IoMapper.class);
+		
+		return ioMapper.selectJoin();
+	}
+
 	public IoVO findByIOId(String io_id) {
 		
 		IoMapper ioMapper=sqlSession.getMapper(IoMapper.class);

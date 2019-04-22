@@ -36,5 +36,29 @@ public class IORestController {
 		return productVO.getP_name();
 	}
 	
-	
+	/*
+	@RequestMapping(value="/selectdcode", method=RequestMethod.POST, produces="html/text;charset=utf8")
+	public List<DeptVO> selectDcode(@RequestParam String d_name) {
+		
+		return deptService.findByDeptName(d_name);
+		
+	}
+	*/
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

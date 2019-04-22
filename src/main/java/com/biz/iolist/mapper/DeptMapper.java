@@ -16,4 +16,6 @@ public interface DeptMapper {
 	public int updateDept(DeptVO deptVO);
 	
 	public int deleteDept(String d_code);
+	
+	public List<DeptVO> findByDeptName(String d_name);
 }
